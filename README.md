@@ -38,7 +38,7 @@ Open up `index.js` in your code editor. You are going to see mostly familiar
 things:
 
 ```javascript
-const name = "Joe";
+const name = "susan";
 const height = 74;
 const message = `${name} is ${height} inches tall`;
 

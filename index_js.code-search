@@ -1,0 +1,71 @@
+# Query: index.js
+# ContextLines: 1
+
+16 results - 5 files
+
+index.html:
+  13      <script>mocha.setup('bdd');</script>
+  14:     <script src="index.js"></script>
+  15      <script src="test/index-test.js"></script>
+
+package.json:
+  4    "description": "Practice writing functions in JavaScript on Learn.co",
+  5:   "main": "index.js",
+  6    "directories": {
+
+README.md:
+   36  
+   37: Open up `index.js` in your code editor. You are going to see mostly familiar
+   38  things:
+
+   58  We can use `console.log` to take a look at the value of the `message` variable.
+   59: To do that, first type `console.log(message);` on the last line of `index.js`
+   60  and save the file. Next, navigate to the terminal, and type the following
+
+   64  ```console
+   65: $ node index.js
+   66  ```
+
+   68  The `node` command _executes_ the code in whatever file you specify (in this
+   69: case, `index.js`). You should see `"Joe is 74 inches tall"` logged in the
+   70  terminal.
+
+   83  
+   84: Go ahead and delete the `console.log` from `index.js` before moving on.
+   85  
+
+   91  ```javascript
+   92: const { name, height, message } = require("../index.js");
+   93  
+
+  119  In the first line, we're enabling the tests to access the variables in
+  120: `index.js`. You don't need to worry about exactly how this works at this point —
+  121  just know that the `module.exports` and `require` keywords allow us to access
+  122: variables written in the `index.js` file from within the test file.
+  123  
+
+  238  > ) at line 1, column 1 [parse.c:769] (Oj::ParseError)", go back to the
+  239: > `index.js` file and remove the `console.log` we added earlier, then run
+  240  > `learn test` again.
+
+  316  This error makes sense because we have the `name` variable set equal to "Joe" in
+  317: our `index.js` file. Let's change that line of code to set `name` equal to
+  318  "Susan" instead. Run the tests again by typing `learn test` in the terminal's
+
+  358  That one says that the `name` variable is not defined. That makes no sense! We
+  359: initialized the `name` variable in `index.js`! What that actually means is that
+  360  the test couldn't find the variable `name`. You'll get this error if the name of
+
+  366  ```txt
+  367: /Users/lizburton_fs/Development/code/phase-0-pac-3-what-is-a-test-lab/index.js:1
+  368  cnst name = "Susan";
+
+test/index-test.js:
+  1: const { name, height, message } = require("../index.js");
+  2  
+
+test/root.js:
+  7  jsdom({
+  8:   src: fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
+  9  })console.log(message);
+  
